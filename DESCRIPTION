@@ -1,10 +1,10 @@
 Package: latentclassfication
 Type: Package
-Title: What the Package Does (Title Case)
+Title: This package helps drawing plots of classification in latent space
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Author: Seoyeon Ok
+Maintainer: The package maintainer <ooksy@tamu.edu>
+Description: 
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
 Encoding: UTF-8
@@ -15,4 +15,10 @@ Imports:
       ggforce,
       gridExtra,
       ggdendro,
-      dendextend
+      dendextend,
+      purrr,
+      cluster
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

@@ -31,30 +31,48 @@ latentclassfication <- function(z, w, n_cluster){
     ggforce::geom_mark_circle(data = wdat, ggplot2::aes(wdat[, 1], wdat[, 2], color = as.factor(wdat[, 5])))
 
 
-  # 2. K-means clustering scree plot?
-  p2
+  # 2. Silhouette plot for kmeans result
+  df <- as.data.frame(scale(w))
+
+  sil_width <- purrr::map_dbl(2:10,  function(k){
+    model <- cluster::pam(x = df, k = k)
+    model$silinfo$avg.width
+  })
+  # Generate a data frame containing both k and sil_width
+  sil_df <- data.frame(
+    k = 2:10,
+    sil_width = sil_width
+  )
+  # Plot the relationship between k and sil_width
+  p2 <- ggplot2::ggplot(sil_df, ggplot2::aes(x = k, y = sil_width)) +
+          ggplot2::ggtitle("Silhouette Plot") +
+          ggplot2::geom_line() + ggplot2::geom_point() +
+          ggplot2::scale_x_continuous(breaks = 2:10)
 
 
-  # 3. hierarchical clustering
-  d <- dist(w)
-  d
-  hcl <- hclust(d, "ave")
-  p3 <- ggdendro::ggdendrogram(hcl)
-
-
-  # 4. PCA
+  # 3. PCA
   pr_result <- prcomp(w)
   pcadat <- as.data.frame(pr_result$x[, 1:2])
   pcadat <- cbind(pcadat, labs, kmeans_result$cluster)
   colnames(pcadat) <- c("PC1", "PC2", "Labs", "Cluster")
-  p4 <- ggplot2::ggplot(pcadat) +
-          ggplot2::aes(PC1, PC2, color = Cluster) +
-          ggplot2::geom_text(label = pcadat[, 3], color = as.factor(pcadat[, 4])) +
-          ggplot2::coord_fixed()
+  p3 <- ggplot2::ggplot(pcadat) +
+    ggplot2::ggtitle("PCA Plot") +
+    ggplot2::aes(PC1, PC2, color = Cluster) +
+    ggplot2::geom_text(label = pcadat[, 3], color = as.factor(pcadat[, 4])) +
+    ggplot2::coord_fixed()
 
-  # 4. grid arrange
+
+  # 4. hierarchical clustering
+  d <- dist(w)
+  d
+  hcl <- hclust(d, "ave")
+  p4 <- ggdendro::ggdendrogram(hcl) + ggplot2::ggtitle("Dendrogram")
+
+
+  # 5. grid arrange
   gridExtra::grid.arrange(p1, p2, p3, p4, nrow = 2, ncol = 2)
 }
+
 
 
 
