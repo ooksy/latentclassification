@@ -6,7 +6,7 @@
 #'
 #' @return set of plots
 #' @export
-latentclassfication <- function(z, w, n_cluster){
+latentclassification <- function(z, w, n_cluster){
   n <- nrow(z)
   p <- nrow(w)
 
