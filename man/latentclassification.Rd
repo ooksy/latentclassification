@@ -7,11 +7,11 @@
 latentclassification(z, w, n_cluster)
 }
 \arguments{
-\item{z}{z estimate from lsirm12pl function}
+\item{z}{z estimate from lsirm12pl function. It's nx2 matrix}
 
-\item{w}{w estimate from lsirm12pl function}
+\item{w}{w estimate from lsirm12pl function. It's px2 matrix}
 
-\item{n_cluster}{number of cluster}
+\item{n_cluster}{number of cluster. It's constant}
 }
 \value{
 set of plots

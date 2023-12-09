@@ -1,8 +1,8 @@
 #' Title latentclassification
 #'
-#' @param z z estimate from lsirm12pl function
-#' @param w w estimate from lsirm12pl function
-#' @param n_cluster number of cluster
+#' @param z z estimate from lsirm12pl function. It's nx2 matrix
+#' @param w w estimate from lsirm12pl function. It's px2 matrix
+#' @param n_cluster number of cluster. It's constant
 #'
 #' @return set of plots
 #' @export
