@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Seoyeon Ok
 Maintainer: The package maintainer <ooksy@tamu.edu>
 Description: 
-    Use four spaces when indenting paragraphs within the Description.
+    When analyzing the result of latent space item response model, it is important to look at the components of latent space. In latent space, there are respondents and items. One of the goals to fit a latent space item respons model is to see the interactions and relationships between respondents group and item group. By setting the dimension of unobserved space 2, we can visualize and observe the interaction between respondents and items. In this package, we provide an easy tool that can visualize latent space. First, we starts with the kmeans clustering and provide silhouette plot so we can determine the number of group. Also, this plot package provides the results of other classification methods such as hierarchical clustering and PCA.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
@@ -18,7 +18,4 @@ Imports:
       dendextend,
       purrr,
       cluster
-Suggests: 
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
+
