@@ -1,4 +1,4 @@
-Package: latentclassfication
+Package: latentclassification
 Type: Package
 Title: This package helps drawing plots of classification in latent space
 Version: 0.1.0
