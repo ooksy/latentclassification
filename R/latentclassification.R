@@ -12,7 +12,7 @@ latentclassification <- function(z, w, n_cluster){
 
 
   # 1. kmeans clustering
-  kmeans_result <- kmeans(w, centers = n_cluster, iter.max = 100, nstart = 1, algorithm = c("Hartigan-Wong", "Lloyd", "Forgy", "MacQueen"), trace=FALSE)
+  kmeans_result <- stats::kmeans(w, centers = n_cluster, iter.max = 100, nstart = 1, algorithm = c("Hartigan-Wong", "Lloyd", "Forgy", "MacQueen"), trace=FALSE)
   labs <- 1:p
   kmeans_result$cluster
   colorlab <- kmeans_result$cluster + 1
@@ -44,28 +44,28 @@ latentclassification <- function(z, w, n_cluster){
     sil_width = sil_width
   )
   # Plot the relationship between k and sil_width
-  p2 <- ggplot2::ggplot(sil_df, ggplot2::aes(x = k, y = sil_width)) +
+  p2 <- ggplot2::ggplot(sil_df, ggplot2::aes(x = sil_df$k, y = sil_width)) +
           ggplot2::ggtitle("Silhouette Plot") +
           ggplot2::geom_line() + ggplot2::geom_point() +
           ggplot2::scale_x_continuous(breaks = 2:10)
 
 
   # 3. PCA
-  pr_result <- prcomp(w)
+  pr_result <- stats::prcomp(w)
   pcadat <- as.data.frame(pr_result$x[, 1:2])
   pcadat <- cbind(pcadat, labs, kmeans_result$cluster)
   colnames(pcadat) <- c("PC1", "PC2", "Labs", "Cluster")
   p3 <- ggplot2::ggplot(pcadat) +
     ggplot2::ggtitle("PCA Plot") +
-    ggplot2::aes(PC1, PC2, color = Cluster) +
+    ggplot2::aes(pcadat$PC1, pcadat$PC2, color = pcadat$Cluster) +
     ggplot2::geom_text(label = pcadat[, 3], color = as.factor(pcadat[, 4])) +
     ggplot2::coord_fixed()
 
 
   # 4. hierarchical clustering
-  d <- dist(w)
+  d <- stats::dist(w)
   d
-  hcl <- hclust(d, "ave")
+  hcl <- stats::hclust(d, "ave")
   p4 <- ggdendro::ggdendrogram(hcl) + ggplot2::ggtitle("Dendrogram")
 
 
