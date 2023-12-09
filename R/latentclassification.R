@@ -1,8 +1,8 @@
 #' Title latentclassification
 #'
-#' @param z
-#' @param w
-#' @param n_cluster
+#' @param z z estimate from lsirm12pl function
+#' @param w w estimate from lsirm12pl function
+#' @param n_cluster number of cluster
 #'
 #' @return set of plots
 #' @export

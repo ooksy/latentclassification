@@ -2,16 +2,20 @@
 % Please edit documentation in R/latentclassification.R
 \name{latentclassfication}
 \alias{latentclassfication}
-\title{Title}
+\title{Title latentclassification}
 \usage{
 latentclassfication(z, w, n_cluster)
 }
 \arguments{
-\item{n_cluster}{}
+\item{z}{z estimate from lsirm12pl function}
+
+\item{w}{w estimate from lsirm12pl function}
+
+\item{n_cluster}{number of cluster}
 }
 \value{
 set of plots
 }
 \description{
-Title
+Title latentclassification
 }
