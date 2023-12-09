@@ -2,7 +2,7 @@
 % Please edit documentation in R/latentclassification.R
 \name{latentclassification}
 \alias{latentclassification}
-\title{Title latentclassification}
+\title{Latentclassification}
 \usage{
 latentclassification(z, w, n_cluster)
 }
@@ -17,5 +17,5 @@ latentclassification(z, w, n_cluster)
 set of plots
 }
 \description{
-Title latentclassification
+Latentclassification
 }

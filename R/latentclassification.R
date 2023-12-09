@@ -1,4 +1,4 @@
-#' Title latentclassification
+#' Latentclassification
 #'
 #' @param z z estimate from lsirm12pl function. It's nx2 matrix
 #' @param w w estimate from lsirm12pl function. It's px2 matrix
