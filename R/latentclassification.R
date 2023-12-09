@@ -1,4 +1,4 @@
-#' Title
+#' Title latentclassification
 #'
 #' @param z
 #' @param w
