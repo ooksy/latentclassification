@@ -17,5 +17,5 @@ latentclassification(z, w, n_cluster)
 set of plots
 }
 \description{
-Latentclassification
+Help doing classification in the latent space and drawing a plot.
 }

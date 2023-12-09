@@ -1,5 +1,7 @@
 #' Latentclassification
 #'
+#' Help doing classification in the latent space and drawing a plot.
+#'
 #' @param z z estimate from lsirm12pl function. It's nx2 matrix
 #' @param w w estimate from lsirm12pl function. It's px2 matrix
 #' @param n_cluster number of cluster. It's constant
