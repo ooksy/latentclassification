@@ -6,6 +6,10 @@
 #' @param w w estimate from lsirm12pl function. It's px2 matrix
 #' @param n_cluster number of cluster. It's constant
 #'
+#' @examples
+#' latentclassification(z, w, 4)
+#'
+#'
 #' @return set of plots
 #' @export
 latentclassification <- function(z, w, n_cluster){

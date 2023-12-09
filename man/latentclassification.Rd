@@ -19,3 +19,8 @@ set of plots
 \description{
 Help doing classification in the latent space and drawing a plot.
 }
+\examples{
+latentclassification(z, w, 4)
+
+
+}
