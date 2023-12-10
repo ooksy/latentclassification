@@ -25,7 +25,7 @@ If you cannot, you can just use toy example I made which is below this readme fi
 
 ```{r conversion, tidy='formatR', tidy.opts=list(width.cutoff = 70),cache=T}
 # load data from package
-data("drv")
+data <-read.table("drv.txt", sep= " ")
 n <- nrow(data)
 p <- ncol(data)
 ```
