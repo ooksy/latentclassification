@@ -27,13 +27,15 @@ w1 <- cbind(rnorm(5, mean = 1, sd = 0.1), rnorm(5, mean = 1, sd = 0.1))
 w2 <- cbind(rnorm(10, mean = 1, sd = 0.1), rnorm(10, mean = -1, sd = 0.1))
 w3 <- cbind(rnorm(5, mean = -1, sd = 0.1), rnorm(5, mean = 1, sd = 0.1))
 w4 <- cbind(rnorm(10, mean = -1, sd = 0.1), rnorm(10, mean = -1, sd = 0.1))
-
 w <- rbind(w1, w2, w3, w4)
 
 devtools::install_github("ooksy/latentclassification")
 library(latentclassification)
 latentclassification(z, w, 4)
-z <- rnorm(200, 0, 1)
 
-latentclassification(z, w, 4)
+z1 <- rnorm(200, 0, 1)
+w1 <- 1
+latentclassification(z1, w1, 4)
 
+
+latentclassification(z, w, 0)
