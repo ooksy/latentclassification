@@ -61,7 +61,7 @@ latentclassification <- function(z, w, n_cluster){
     sil_width = sil_width
   )
   # Plot the relationship between k and sil_width
-  p2 <- ggplot2::ggplot(sil_df, ggplot2::aes(x = sil_df$k, y = sil_width)) +
+  p2 <- ggplot2::ggplot(sil_df, ggplot2::aes(x = k, y = sil_width)) +
           ggplot2::ggtitle("Silhouette Plot") +
           ggplot2::geom_line() + ggplot2::geom_point() +
           ggplot2::scale_x_continuous(breaks = 2:10)
@@ -74,7 +74,7 @@ latentclassification <- function(z, w, n_cluster){
   colnames(pcadat) <- c("PC1", "PC2", "Labs", "Cluster")
   p3 <- ggplot2::ggplot(pcadat) +
     ggplot2::ggtitle("PCA Plot") +
-    ggplot2::aes(pcadat$PC1, pcadat$PC2, color = pcadat$Cluster) +
+    ggplot2::aes(PC1, PC2, color = pcadat$Cluster) +
     ggplot2::geom_text(label = pcadat[, 3], color = as.factor(pcadat[, 4])) +
     ggplot2::coord_fixed()
 
