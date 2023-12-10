@@ -19,7 +19,9 @@ library(latentclassification)
 
 ### 1. Start with the item response data
 
-Load the data
+Load the data.
+You can find it in my R package and download.
+If you cannot, you can just use toy example I made which is below this readme file.
 
 ```{r conversion, tidy='formatR', tidy.opts=list(width.cutoff = 70),cache=T}
 # load data from package
@@ -38,7 +40,8 @@ install.packages("lsirm12pl")
 library(lsirm12pl)
 ```
 
-We can decide dimension to be 2 or 3 to visualize latent space by setting ndim as 2 or 3. 
+We can decide dimension to be 2 or 3 to visualize latent space by setting ndim as 2 or 3.
+Here we will make just 2 dimensional plot.
 niter is number of iteration, nburn is discarded mcmc, nthin is the number of thining in mcmc.
 jump_parameter means the amount of jump when you do mcmc. pr_paramaeters are about the prior values.
 
