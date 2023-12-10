@@ -74,7 +74,7 @@ latentclassification <- function(z, w, n_cluster){
   colnames(pcadat) <- c("PC1", "PC2", "Labs", "Cluster")
   p3 <- ggplot2::ggplot(pcadat) +
     ggplot2::ggtitle("PCA Plot") +
-    ggplot2::aes(PC1, PC2, color = pcadat$Cluster) +
+    ggplot2::aes(PC1, PC2, color = Cluster) +
     ggplot2::geom_text(label = pcadat[, 3], color = as.factor(pcadat[, 4])) +
     ggplot2::coord_fixed()
 
