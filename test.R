@@ -16,3 +16,24 @@ lsirm_result <- lsirm2pl_o(data, ndim = 2, niter = 100, nburn = 20, nthin = 5, n
 
 latentclassfication(lsirm_result$z_estimate, lsirm_result$w_estimate, 4)
 
+devtools::install_github("ooksy/latentclassification")
+library(latentclassification)
+?latentclassification
+use_test("latentclassification")
+devtools::document()
+
+z <- cbind(rnorm(200, 0, 1), rnorm(200, 0, 1))
+w1 <- cbind(rnorm(5, mean = 1, sd = 0.1), rnorm(5, mean = 1, sd = 0.1))
+w2 <- cbind(rnorm(10, mean = 1, sd = 0.1), rnorm(10, mean = -1, sd = 0.1))
+w3 <- cbind(rnorm(5, mean = -1, sd = 0.1), rnorm(5, mean = 1, sd = 0.1))
+w4 <- cbind(rnorm(10, mean = -1, sd = 0.1), rnorm(10, mean = -1, sd = 0.1))
+
+w <- rbind(w1, w2, w3, w4)
+
+devtools::install_github("ooksy/latentclassification")
+library(latentclassification)
+latentclassification(z, w, 4)
+z <- rnorm(200, 0, 1)
+
+latentclassification(z, w, 4)
+
