@@ -1,13 +1,10 @@
-rm(list = ls())
-
 library(devtools)
 devtools::install_github('ooksy/latentclassification')
-
 library(latentclassfication)
 
 #install.packages("lsirm12pl")
 library(lsirm12pl)
-setwd("C://Users//SEC//Documents//latentclassfication")
+load(drv)
 data <-read.table("drv.txt", sep= " ")
 n <- nrow(data)
 p <- ncol(data)

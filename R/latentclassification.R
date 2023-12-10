@@ -13,6 +13,17 @@
 #' @return set of plots
 #' @export
 latentclassification <- function(z, w, n_cluster){
+  z <- as.matrix(z)
+  w <- as.matrix(w)
+
+  if(ncol(z) != 2|ncol(w) != 2){
+    stop("dimension of both z and w should be 2")
+  }
+
+  if(n_cluster == 0){
+    stop("n_cluster should be at least 1")
+  }
+
   n <- nrow(z)
   p <- nrow(w)
 
