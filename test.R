@@ -1,8 +1,6 @@
 library(devtools)
 devtools::install_github('ooksy/latentclassification')
 library(latentclassfication)
-
-#install.packages("lsirm12pl")
 library(lsirm12pl)
 load(drv)
 data <-read.table("drv.txt", sep= " ")
@@ -16,8 +14,6 @@ lsirm_result <- lsirm2pl_o(data, ndim = 2, niter = 100, nburn = 20, nthin = 5, n
 
 latentclassfication(lsirm_result$z_estimate, lsirm_result$w_estimate, 4)
 
-devtools::install_github("ooksy/latentclassification")
-library(latentclassification)
 ?latentclassification
 use_test("latentclassification")
 devtools::document()
@@ -29,13 +25,16 @@ w3 <- cbind(rnorm(5, mean = -1, sd = 0.1), rnorm(5, mean = 1, sd = 0.1))
 w4 <- cbind(rnorm(10, mean = -1, sd = 0.1), rnorm(10, mean = -1, sd = 0.1))
 w <- rbind(w1, w2, w3, w4)
 
-devtools::install_github("ooksy/latentclassification")
-library(latentclassification)
 latentclassification(z, w, 4)
 
+# test warning messages
+# when columns of z is not 2
 z1 <- rnorm(200, 0, 1)
 w1 <- 1
 latentclassification(z1, w1, 4)
 
-
+# when the number of cluster is smaller than 1
 latentclassification(z, w, 0)
+latentclassification(z, w, -2)
+latentclassification(z, w, 1)
+latentclassification(z, w, 2)
