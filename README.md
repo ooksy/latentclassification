@@ -1,16 +1,4 @@
----
-title: "Latentclassification Package"
-author: "Seoyeon Ok"
-
-output: 
-  github_document:
-        toc: true
-        toc_depth: 4
-  
----
-
-
-## Latentclassification : tools for classification of item response data in the latent space.
+# Latentclassification : tools for classification of item response data in the latent space.
 
 When analyzing the result of latent space item response model, it is important to look at the components of latent space. In latent space, there are respondents and items. One of the goals to fit a latent space item respons model is to see the interactions and relationships between respondents group and item group.
 
