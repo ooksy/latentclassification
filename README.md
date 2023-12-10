@@ -71,6 +71,26 @@ Function also gives plots of PCA and hierarchical clustering.
 latentclassfication(lsirm_result$z_estimate, lsirm_result$w_estimate, 4)
 ```
 
+### 4. Doing with toy example
+
+Above all process can be complicated.
+You can make a toy example and run a function.
+z and w should be matrice that have 2 columns.
+Here I just intentionally made 4 groups of w.
+
+```{r bbox, tidy='formatR', tidy.opts=list(width.cutoff = 70),cache=T}
+# Create a toy example
+z <- cbind(rnorm(200, 0, 1), rnorm(200, 0, 1))
+w1 <- cbind(rnorm(5, mean = 1, sd = 0.1), rnorm(5, mean = 1, sd = 0.1))
+w2 <- cbind(rnorm(10, mean = 1, sd = 0.1), rnorm(10, mean = -1, sd = 0.1))
+w3 <- cbind(rnorm(5, mean = -1, sd = 0.1), rnorm(5, mean = 1, sd = 0.1))
+w4 <- cbind(rnorm(10, mean = -1, sd = 0.1), rnorm(10, mean = -1, sd = 0.1))
+w <- rbind(w1, w2, w3, w4)
+
+# Draw a plot
+latentclassification(z, w, 4)
+```
+
 
 ## Details
 
