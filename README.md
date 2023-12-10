@@ -23,7 +23,7 @@ Load the data
 
 ```{r conversion, tidy='formatR', tidy.opts=list(width.cutoff = 70),cache=T}
 # load data from package
-data(drv)
+data("drv")
 n <- nrow(data)
 p <- ncol(data)
 ```
