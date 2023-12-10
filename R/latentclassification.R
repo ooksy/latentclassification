@@ -27,7 +27,7 @@ latentclassification <- function(z, w, n_cluster){
   n <- nrow(z)
   p <- nrow(w)
 
-
+  if(ncol(z) == 2 & ncol(w) == 2 & n_cluster >=2){
   # 1. kmeans clustering
   kmeans_result <- stats::kmeans(w, centers = n_cluster, iter.max = 100, nstart = 1, algorithm = c("Hartigan-Wong", "Lloyd", "Forgy", "MacQueen"), trace=FALSE)
   labs <- 1:p
@@ -88,6 +88,8 @@ latentclassification <- function(z, w, n_cluster){
 
   # 5. grid arrange
   gridExtra::grid.arrange(p1, p2, p3, p4, nrow = 2, ncol = 2)
+
+  }
 }
 
 
