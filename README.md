@@ -22,7 +22,6 @@ library(latentclassification)
 Load the data
 
 ```{r conversion, tidy='formatR', tidy.opts=list(width.cutoff = 70),cache=T}
-
 # load data from package
 data(drv)
 n <- nrow(data)
@@ -44,7 +43,6 @@ niter is number of iteration, nburn is discarded mcmc, nthin is the number of th
 jump_parameter means the amount of jump when you do mcmc. pr_paramaeters are about the prior values.
 
 ```{r interp func, tidy='formatR', tidy.opts=list(width.cutoff = 70),cache=T}
-
 # Fitting the model
 lsirm_result <- lsirm2pl_o(data, ndim = 2, niter = 1000, nburn = 200, nthin = 5, nprint = 500, jump_beta = 0.4,
                            jump_theta = 1, jump_alpha = 1, jump_gamma = 0.025, jump_z = 0.5, jump_w = 0.5, pr_mean_beta = 0,
