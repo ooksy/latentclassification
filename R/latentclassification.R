@@ -20,8 +20,8 @@ latentclassification <- function(z, w, n_cluster){
     stop("dimension of both z and w should be 2")
   }
 
-  if(n_cluster == 0){
-    stop("n_cluster should be at least 1")
+  if(n_cluster == c(0, 1)){
+    stop("n_cluster should be at least 2")
   }
 
   n <- nrow(z)
